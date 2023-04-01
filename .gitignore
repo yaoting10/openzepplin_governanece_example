@@ -10,4 +10,8 @@ cache
 artifacts
 
 .idea
-.
+deployments
+package-lock.json
+proposals.json
+yarn.lock
+secretDir/

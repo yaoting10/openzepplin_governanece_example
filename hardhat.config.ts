@@ -3,9 +3,16 @@ import "@nomicfoundation/hardhat-toolbox";
 import "hardhat-deploy"
 import "@nomiclabs/hardhat-ethers"
 import "@typechain/hardhat"
+import fs from "fs";
+const privateKey = fs.readFileSync("secretDir/.secret_test").toString().trim();
 
 const config: HardhatUserConfig = {
   defaultNetwork: "hardhat",
+  etherscan:{
+    apiKey: {
+      goerli: "V8HYP4GX4R4EZB161G57TJK9XXN9TF5H7N"
+    }
+  },
   solidity: {
     version: "0.8.9",
     settings: {
@@ -25,8 +32,8 @@ const config: HardhatUserConfig = {
     goerli: {
       chainId: 5,
       url: "https://goerli.infura.io/v3/68f1ff6b990e4934b4be094603fae80e",
-      accounts: ['0x77e32ca5a117fdf00734c4ba7e968ac61e7a0a45fb95984f4e8e0e15826791d3'],
-      gasPrice: 5500000000
+      accounts: [privateKey],
+      gasPrice: 253500000000
     },
   },
   namedAccounts: {

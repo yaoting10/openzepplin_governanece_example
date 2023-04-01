@@ -1,7 +1,6 @@
 import { HardhatRuntimeEnvironment } from "hardhat/types";
 import { DeployFunction } from "hardhat-deploy/types";
 import {VOTING_DELAY, VOTING_PERIOD, QUORUM_PENCENTAGE, ADDRESS_ZERO} from "../helper-hardhat-config";
-import {getContract} from "@nomiclabs/hardhat-ethers/internal/helpers";
 import {ethers} from "hardhat";
 
 const deployGovernorConstract: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
